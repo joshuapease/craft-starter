@@ -37,7 +37,11 @@ The best way to spin up your first project is with [DDEV](https://ddev.com/), a 
     ddev config --project-type=craftcms --docroot=web --create-docroot --php-version=8.2
 
     # Use this package as a starting point:
-    ddev composer create -y --no-scripts craftcms/craft=^5.0.0
+    Don't: ddev composer create -y --no-scripts craftcms/craft=^5.0.0
+    
+    # Since this isn't on packagist yet, run this.
+    ddev composer create -y --no-scripts joshuapease/craft --repository="{\"url\": \"https://github.com/joshuapease/craft-starter\", \"type\": \"vcs\"}" --stability=dev --remove-vcs
+
 
     # Run the Craft CMS installer (use all defaults):
     ddev craft install
